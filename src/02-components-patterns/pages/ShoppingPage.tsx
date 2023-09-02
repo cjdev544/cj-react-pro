@@ -1,5 +1,6 @@
 import { ProductButtons, ProductImage, ProductTitle } from '..'
 import ProductCard from '../components/ProductCard'
+import '../styles/custom-styles.css'
 
 const product = {
   id: '1',
@@ -20,16 +21,16 @@ export default function ShoppingPage() {
           gap: 5,
         }}
       >
-        <ProductCard product={product}>
+        <ProductCard product={product} className='bg-dark'>
           <ProductImage />
-          <ProductTitle />
-          <ProductButtons />
+          <ProductTitle className='text-white' />
+          <ProductButtons className='border-white' />
         </ProductCard>
 
         <ProductCard product={product}>
           <ProductCard.Image />
           <ProductCard.Title />
-          <ProductCard.Buttons />
+          <ProductCard.Buttons style={{ backgroundColor: '#ccc' }} />
         </ProductCard>
       </div>
     </div>

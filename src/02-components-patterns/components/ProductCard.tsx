@@ -8,6 +8,8 @@ import styles from '../styles/styles.module.css'
 interface Props {
   children?: React.ReactNode
   product: Product
+  className?: string
+  style?: React.CSSProperties
 }
 
 interface ProductContextProps {
@@ -16,14 +18,21 @@ interface ProductContextProps {
 
 export const ProductContext = createContext({} as ProductContextProps)
 
-export default function ProductCard({ children, product }: Props) {
+export default function ProductCard({
+  children,
+  product,
+  className,
+  style,
+}: Props) {
   return (
     <ProductContext.Provider
       value={{
         product,
       }}
     >
-      <div className={styles.productCard}>{children}</div>
+      <div className={`${styles.productCard} ${className}`} style={style}>
+        {children}
+      </div>
     </ProductContext.Provider>
   )
 }

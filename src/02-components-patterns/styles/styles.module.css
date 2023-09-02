@@ -22,7 +22,7 @@
 .buttonsContainer {
     margin: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
 }
 
 .buttonMinus {
