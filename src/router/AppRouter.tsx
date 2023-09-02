@@ -8,7 +8,10 @@ export default function AppRouter() {
     {
       path: '/',
       element: <SideBar />,
-      children: routes,
+      children: [
+        ...routes,
+        { path: '/', element: <Navigate to='/' replace /> },
+      ],
       errorElement: <Navigate to='/' replace />,
     },
   ])
